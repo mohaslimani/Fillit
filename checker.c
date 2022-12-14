@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 20:47:44 by oelkhams          #+#    #+#             */
-/*   Updated: 2022/12/14 14:36:18 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/14 14:50:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,12 @@ int			get_tetriminos(const int fd, t_tet *tetri)
 			return (-1);
 		if (read(fd, &c, 1) != 1)
 			return (-1);
-		read(fd, &c, 1);
 		if (c != '\n')
 			return (-1);
 		i++;
 	}
 	if (read(fd, &k, 1) == 0)
 		return (0);
-	read(fd, &k, 1);
 	if (k != '\n')
 		return (-1);
 	return (1);
