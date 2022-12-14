@@ -1,0 +1,5 @@
+Text files are not identical on different operating systems. Windows uses a two-byte code to mark the end of a line: 0x0D, 0x0A. Linux uses one byte, 0x0A.
+sooooo if you are trying to exec from wsl or windows :::::::
+- \n is coded in one byte on linux/mac
+- \n is coded in two bytes on windows/wsl
+- go to checker.c -> get_terminos() and add another read(fd, &c, 1); read(fd, &k, 1); to escape one byte
